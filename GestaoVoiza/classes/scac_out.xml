@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HT_SolicitarPedido.task</file>
+      <name>HT_SolicitarPedido.task</name>
+      <fix/>
+      <msg>Task title not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HT_SolicitarPedido.task</file>
+      <name>HT_SolicitarPedido.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HT_AprovarValor.task</file>
+      <name>HT_AprovarValor.task</name>
+      <fix/>
+      <msg>Task title not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HT_AprovarValor.task</file>
+      <name>HT_AprovarValor.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HT_AprovarPedido.task</file>
+      <name>HT_AprovarPedido.task</name>
+      <fix/>
+      <msg>Task title not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HT_AprovarPedido.task</file>
+      <name>HT_AprovarPedido.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HT_ComprarPedido.task</file>
+      <name>HT_ComprarPedido.task</name>
+      <fix/>
+      <msg>Task title not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HT_ComprarPedido.task</file>
+      <name>HT_ComprarPedido.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>/processes/Solicitacao.bpmn</file>
+      <name>/processes/Solicitacao.bpmn</name>
+      <fix/>
+      <msg>Node 'CriarTask' has no implementation defined</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>/processes/Solicitacao.bpmn</file>
+      <name>/processes/Solicitacao.bpmn</name>
+      <fix/>
+      <msg>Node 'AtualizarTask' has no implementation defined</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>/processes/Solicitacao.bpmn</file>
+      <name>/processes/Solicitacao.bpmn</name>
+      <fix/>
+      <msg>Node 'AtualizarTask' has no implementation defined</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>/processes/Solicitacao.bpmn</file>
+      <name>/processes/Solicitacao.bpmn</name>
+      <fix/>
+      <msg>Node 'AtualizarTask' has no implementation defined</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>/processes/Solicitacao.bpmn</file>
+      <name>/processes/Solicitacao.bpmn</name>
+      <fix/>
+      <msg>Node 'AtualizarTask' has no implementation defined</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>/processes/Solicitacao.bpmn</file>
+      <name>/processes/Solicitacao.bpmn</name>
+      <fix/>
+      <msg>Node 'AtualizarTask' has no implementation defined</msg>
+   </Fault>
+</Faults>

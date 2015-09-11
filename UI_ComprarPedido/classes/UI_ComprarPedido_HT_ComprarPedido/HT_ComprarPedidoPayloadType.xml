@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="HT_ComprarPedidoPayloadType"
+          Package="UI_ComprarPedido_HT_ComprarPedido"
+          BeanClass="UI_ComprarPedido_HT_ComprarPedido.HT_ComprarPedidoPayloadType"
+          isJavaBased="false">
+  <AccessorAttribute id="BO_Solicitacao" IsCollection="true"
+                     BeanClass="UI_ComprarPedido_HT_ComprarPedido.BO_SolicitacaoType"
+                     CollectionBeanClass="UI_ComprarPedido_HT_ComprarPedido.BO_SolicitacaoType_BO_Solicitacao_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="BOSolicitacao"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="BO_Solicitacao"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao"/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>

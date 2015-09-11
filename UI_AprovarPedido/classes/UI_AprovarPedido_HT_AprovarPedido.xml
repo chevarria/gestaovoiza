@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="UI_AprovarPedido_HT_AprovarPedido"
+          BeanClass="UI_AprovarPedido_HT_AprovarPedido" isJavaBased="false">
+  <MethodAccessor IsCollection="false"
+                  Type="UI_AprovarPedido_HT_AprovarPedido.getTaskDetails"
+                  BeanClass="UI_AprovarPedido_HT_AprovarPedido.getTaskDetails"
+                  id="getTaskDetails" ReturnNodeName="Return">
+    <ParameterInfo id="bpmWorklistContext" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="bpmWorklistTaskId" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="bpmWorklistTaskVersion" Type="java.lang.String"
+                   isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

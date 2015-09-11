@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="BO_SolicitacaoType"
+          Package="UI_SolicitarPedido_HT_SolicitarPedido"
+          BeanClass="UI_SolicitarPedido_HT_SolicitarPedido.BO_SolicitacaoType"
+          isJavaBased="false">
+  <Attribute Name="id" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao"/>
+        <Property Name="nextSibling" Value="titulo"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Id"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="id"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="titulo" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao"/>
+        <Property Name="nextSibling" Value="descricao"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Titulo"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="titulo"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="descricao" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao"/>
+        <Property Name="nextSibling" Value="data"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Descricao"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="descricao"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="data" Type="java.sql.Timestamp">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao"/>
+        <Property Name="nextSibling" Value="valor"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Data"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="data"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao"/>
+        <Property Name="type" Value="dateTime"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="valor" Type="java.math.BigDecimal">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Valor"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="valor"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao"/>
+        <Property Name="type" Value="java.math.BigDecimal"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+</JavaBean>

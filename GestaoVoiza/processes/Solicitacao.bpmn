@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions fileRevision="20120217" version="11.1.1.7.0.0.8" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DI" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns3="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns5="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <process processType="Public" isExecutable="true" name="Solicitacao" id="Solicitacao">
+        <extensionElements>
+            <ns5:OracleExtensions>
+                <ns5:FeatureSet>
+                    <ns5:BooleanFeature value="false" name="atomic"/>
+                    <ns5:BooleanFeature value="false" name="instanceScreenflow"/>
+                    <ns5:BooleanFeature value="true" name="relative-coordinates"/>
+                    <ns5:BooleanFeature value="true" name="sharePredefineVariables"/>
+                    <ns5:BooleanFeature value="true" name="suspendInstanceOnDataAssociationError"/>
+                    <ns5:StringFeature value="" name="ANALYTICS_VIEW_IDENTIFIER"/>
+                    <ns5:StringFeature value="jstein" name="AUTHOR"/>
+                    <ns5:StringFeature value="default" name="GreedyExecutionMode"/>
+                    <ns5:StringFeature value="" name="NAMESPACE"/>
+                    <ns5:StringFeature value="PROJECT_DEFAULT" name="generatesEvents"/>
+                    <ns5:StringFeature value="HORIZONTAL_LAYOUT" name="process-layout"/>
+                    <ns5:StringFeature value="1.0" name="scale"/>
+                    <ns5:StringFeature value="REGULAR" name="sealType"/>
+                </ns5:FeatureSet>
+                <ns5:ApplicationInfo>
+                    <ns5:AppLinkName/>
+                    <ns5:Description/>
+                    <ns5:AppTags/>
+                    <ns5:AppCategory/>
+                    <ns5:AppExternalDocuments/>
+                </ns5:ApplicationInfo>
+            </ns5:OracleExtensions>
+        </extensionElements>
+        <laneSet>
+            <lane name="Solicitante" id="lane0">
+                <extensionElements>
+                    <ns5:OracleExtensions>
+                        <ns5:GraphicsAttributes backgroundColor="-1761607681">
+                            <ns5:Position x="0" y="0"/>
+                            <ns5:Size width="200" height="0"/>
+                        </ns5:GraphicsAttributes>
+                        <ns5:LaneAttributes roleId="Solicitante"/>
+                        <ns5:FeatureSet/>
+                    </ns5:OracleExtensions>
+                </extensionElements>
+            </lane>
+            <lane name="Aprovador" id="lane">
+                <extensionElements>
+                    <ns5:OracleExtensions>
+                        <ns5:GraphicsAttributes backgroundColor="16777215">
+                            <ns5:Position x="200" y="0"/>
+                            <ns5:Size width="187" height="0"/>
+                        </ns5:GraphicsAttributes>
+                        <ns5:LaneAttributes roleId="Aprovador"/>
+                        <ns5:FeatureSet/>
+                    </ns5:OracleExtensions>
+                </extensionElements>
+            </lane>
+            <lane name="Comprador" id="lane 1">
+                <extensionElements>
+                    <ns5:OracleExtensions>
+                        <ns5:GraphicsAttributes backgroundColor="16777215">
+                            <ns5:Position x="387" y="0"/>
+                            <ns5:Size width="258" height="0"/>
+                        </ns5:GraphicsAttributes>
+                        <ns5:LaneAttributes roleId="Comprador"/>
+                        <ns5:FeatureSet/>
+                    </ns5:OracleExtensions>
+                </extensionElements>
+            </lane>
+        </laneSet>
+        <userTask isForCompensation="false" name="SolicitarPedido" id="USER_TASK_1441821336206">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="250" y="100"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="reinitiate"/>
+                        <ns5:BooleanFeature value="true" name="manualCreation"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                        <ns5:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
+                        <ns5:StringFeature value="INITIATOR" name="humanTaskType"/>
+                        <ns5:StringFeature value="" name="reinitiateSource"/>
+                    </ns5:FeatureSet>
+                    <ns5:HumanTask humanTaskReference="HumanTasks.HT_SolicitarPedido"/>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification>
+                <dataInput name="boSolicitacao" id="boSolicitacao">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao" element="BO_Solicitacao" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <dataInput name="execData" id="execData">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpel/workflow/task" element="task" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <dataOutput name="outcome" id="outcome">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://www.w3.org/2001/XMLSchema" type="string" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataOutput>
+                <dataOutput name="boSolicitacao" id="boSolicitacao">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao" element="BO_Solicitacao" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataOutput>
+                <dataOutput name="execData" id="execData">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpel/workflow/task" element="task" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataOutput>
+                <inputSet id="USER_TASK_1441821336206_uniqueInputSet">
+                    <dataInputRefs>boSolicitacao</dataInputRefs>
+                    <dataInputRefs>execData</dataInputRefs>
+                </inputSet>
+                <outputSet id="USER_TASK_1441821336206_uniqueOutputSet">
+                    <dataOutputRefs>outcome</dataOutputRefs>
+                    <dataOutputRefs>boSolicitacao</dataOutputRefs>
+                    <dataOutputRefs>execData</dataOutputRefs>
+                </outputSet>
+            </ioSpecification>
+            <dataInputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions/>
+                </extensionElements>
+                <sourceRef>DO_Solicitacao</sourceRef>
+                <targetRef>boSolicitacao</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_Solicitacao')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('boSolicitacao')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataInputAssociation>
+            <dataOutputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions/>
+                </extensionElements>
+                <sourceRef>boSolicitacao</sourceRef>
+                <targetRef>DO_Solicitacao</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataOutput('boSolicitacao')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_Solicitacao')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataOutputAssociation>
+            <resourceRole name="Solicitante" id="lane0"/>
+        </userTask>
+        <userTask isForCompensation="false" name="AprovarPedido" id="USER_TASK_1441821394752">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="400" y="300"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="reinitiate"/>
+                        <ns5:BooleanFeature value="false" name="manualCreation"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                        <ns5:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
+                        <ns5:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <ns5:StringFeature value="" name="reinitiateSource"/>
+                    </ns5:FeatureSet>
+                    <ns5:HumanTask humanTaskReference="HumanTasks.HT_AprovarPedido"/>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification>
+                <dataInput name="boSolicitacao" id="boSolicitacao">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao" element="BO_Solicitacao" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <dataInput name="execData" id="execData">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpel/workflow/task" element="task" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <dataOutput name="outcome" id="outcome">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://www.w3.org/2001/XMLSchema" type="string" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataOutput>
+                <dataOutput name="execData" id="execData">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpel/workflow/task" element="task" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataOutput>
+                <inputSet id="USER_TASK_1441821394752_uniqueInputSet">
+                    <dataInputRefs>boSolicitacao</dataInputRefs>
+                    <dataInputRefs>execData</dataInputRefs>
+                </inputSet>
+                <outputSet id="USER_TASK_1441821394752_uniqueOutputSet">
+                    <dataOutputRefs>outcome</dataOutputRefs>
+                    <dataOutputRefs>execData</dataOutputRefs>
+                </outputSet>
+            </ioSpecification>
+            <dataInputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions/>
+                </extensionElements>
+                <sourceRef>DO_Solicitacao</sourceRef>
+                <targetRef>boSolicitacao</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_Solicitacao')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('boSolicitacao')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataInputAssociation>
+            <dataOutputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions/>
+                </extensionElements>
+                <sourceRef>outcome</sourceRef>
+                <targetRef>status</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataOutput('outcome')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('status')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataOutputAssociation>
+            <resourceRole name="Aprovador" id="lane"/>
+        </userTask>
+        <userTask isForCompensation="false" name="AprovarValor" id="USER_TASK_1441821465562">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="850" y="300"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="reinitiate"/>
+                        <ns5:BooleanFeature value="false" name="manualCreation"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                        <ns5:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
+                        <ns5:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <ns5:StringFeature value="" name="reinitiateSource"/>
+                    </ns5:FeatureSet>
+                    <ns5:HumanTask humanTaskReference="HumanTasks.HT_AprovarValor"/>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification>
+                <dataInput name="boSolicitacao" id="boSolicitacao">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao" element="BO_Solicitacao" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <dataInput name="execData" id="execData">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpel/workflow/task" element="task" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <dataOutput name="outcome" id="outcome">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://www.w3.org/2001/XMLSchema" type="string" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataOutput>
+                <dataOutput name="execData" id="execData">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpel/workflow/task" element="task" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataOutput>
+                <inputSet id="USER_TASK_1441821465562_uniqueInputSet">
+                    <dataInputRefs>boSolicitacao</dataInputRefs>
+                    <dataInputRefs>execData</dataInputRefs>
+                </inputSet>
+                <outputSet id="USER_TASK_1441821465562_uniqueOutputSet">
+                    <dataOutputRefs>outcome</dataOutputRefs>
+                    <dataOutputRefs>execData</dataOutputRefs>
+                </outputSet>
+            </ioSpecification>
+            <dataInputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions/>
+                </extensionElements>
+                <sourceRef>DO_Solicitacao</sourceRef>
+                <targetRef>boSolicitacao</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_Solicitacao')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('boSolicitacao')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataInputAssociation>
+            <dataOutputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions/>
+                </extensionElements>
+                <sourceRef>outcome</sourceRef>
+                <targetRef>status</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataOutput('outcome')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('status')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataOutputAssociation>
+            <resourceRole name="Aprovador" id="lane"/>
+        </userTask>
+        <userTask isForCompensation="false" name="ComprarPedido" id="USER_TASK_1441821714113">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="898" y="541"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="reinitiate"/>
+                        <ns5:BooleanFeature value="false" name="manualCreation"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                        <ns5:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
+                        <ns5:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <ns5:StringFeature value="" name="reinitiateSource"/>
+                    </ns5:FeatureSet>
+                    <ns5:HumanTask humanTaskReference="HumanTasks.HT_ComprarPedido"/>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification>
+                <dataInput name="boSolicitacao" id="boSolicitacao">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao" element="BO_Solicitacao" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <dataInput name="execData" id="execData">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpel/workflow/task" element="task" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <dataOutput name="outcome" id="outcome">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://www.w3.org/2001/XMLSchema" type="string" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataOutput>
+                <dataOutput name="execData" id="execData">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpel/workflow/task" element="task" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataOutput>
+                <inputSet id="USER_TASK_1441821714113_uniqueInputSet">
+                    <dataInputRefs>boSolicitacao</dataInputRefs>
+                    <dataInputRefs>execData</dataInputRefs>
+                </inputSet>
+                <outputSet id="USER_TASK_1441821714113_uniqueOutputSet">
+                    <dataOutputRefs>outcome</dataOutputRefs>
+                    <dataOutputRefs>execData</dataOutputRefs>
+                </outputSet>
+            </ioSpecification>
+            <dataInputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions/>
+                </extensionElements>
+                <sourceRef>DO_Solicitacao</sourceRef>
+                <targetRef>boSolicitacao</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_Solicitacao')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('boSolicitacao')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataInputAssociation>
+            <resourceRole name="Comprador" id="lane 1"/>
+        </userTask>
+        <serviceTask isForCompensation="false" name="CriarTask" id="SERVICE_TASK_1441823253290">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="403" y="103"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                    <ns5:Conversational/>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification/>
+        </serviceTask>
+        <serviceTask isForCompensation="false" name="AtualizarTask" id="SERVICE_TASK_1441823569027">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="553" y="484"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="true" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                    <ns5:Conversational/>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification/>
+        </serviceTask>
+        <serviceTask isForCompensation="false" name="AtualizarTask" id="SERVICE_TASK_1441823740886">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="718" y="541"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="true" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                    <ns5:Conversational/>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification/>
+        </serviceTask>
+        <serviceTask isForCompensation="false" name="AtualizarTask" id="SERVICE_TASK_1441823917513">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="898" y="431"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="true" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                    <ns5:Conversational/>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification/>
+        </serviceTask>
+        <serviceTask isForCompensation="false" name="AtualizarTask" id="SERVICE_TASK_1441823948636">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="1166" y="438"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="true" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                    <ns5:Conversational/>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification/>
+        </serviceTask>
+        <serviceTask isForCompensation="false" name="AtualizarTask" id="SERVICE_TASK_1441823970828">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="1048" y="541"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="true" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                    <ns5:Conversational/>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification/>
+        </serviceTask>
+        <startEvent isInterrupting="false" name="Start" id="EVT14022830002384">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="100" y="100"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <outputSet/>
+        </startEvent>
+        <endEvent name="End" id="EVT14022830002381">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="1168" y="542"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <inputSet/>
+        </endEvent>
+        <exclusiveGateway gatewayDirection="Unspecified" name="Valor Excedido?" id="EXCLUSIVE_GATEWAY_1441821446023">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="700" y="300"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </exclusiveGateway>
+        <exclusiveGateway gatewayDirection="Unspecified" name="Aprovado?" id="EXCLUSIVE_GATEWAY_1441821920830">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="550" y="300"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </exclusiveGateway>
+        <exclusiveGateway gatewayDirection="Unspecified" name="Aprovado?" id="EXCLUSIVE_GATEWAY_1441822150576">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="1000" y="300"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </exclusiveGateway>
+        <sequenceFlow sourceRef="EVT14022830002384" targetRef="USER_TASK_1441821336206" name="sf14" id="sf14">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="USER_TASK_1441821336206" targetRef="SERVICE_TASK_1441823253290" name="sf_1441821336209" id="sf_1441821336209">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="USER_TASK_1441821394752" targetRef="EXCLUSIVE_GATEWAY_1441821920830" name="sf_1441821394753" id="sf_1441821394753">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="EXCLUSIVE_GATEWAY_1441821446023" targetRef="USER_TASK_1441821465562" name="sf_1441821446025" id="sf_1441821446025">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                        <ns5:StringFeature value="" name="userName"/>
+                        <ns5:IntegerFeature value="0" name="order"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <conditionExpression xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:dec="http://xmlns.oracle.com/bpm/decimal" ns7:ns="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">(dec:compare(bpmn:getDataObject('DO_Solicitacao')/ns:valor, 500)  &gt;  0)
+                <extensionElements>
+                    <ns5:OracleExtensions>
+                        <ns5:Expression mode="simple"/>
+                    </ns5:OracleExtensions>
+                </extensionElements>
+            </conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="EXCLUSIVE_GATEWAY_1441821446023" targetRef="SERVICE_TASK_1441823740886" name="sf_1441821698601" id="sf_1441821698601">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes>
+                        <ns5:Positions x="700" y="466"/>
+                    </ns5:SequenceFlowAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="700,466" name="curve"/>
+                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="USER_TASK_1441821714113" targetRef="SERVICE_TASK_1441823970828" name="sf_1441821714114" id="sf_1441821714114">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="USER_TASK_1441821465562" targetRef="EXCLUSIVE_GATEWAY_1441822150576" name="sf_1441821731508" id="sf_1441821731508">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="EXCLUSIVE_GATEWAY_1441821920830" targetRef="EXCLUSIVE_GATEWAY_1441821446023" name="sf_1441821920832" id="sf_1441821920832">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                        <ns5:StringFeature value="" name="userName"/>
+                        <ns5:IntegerFeature value="0" name="order"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <conditionExpression xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">contains(string(bpmn:getDataObject('status')), 'APROVADO')
+                <extensionElements>
+                    <ns5:OracleExtensions>
+                        <ns5:Expression mode="simple"/>
+                    </ns5:OracleExtensions>
+                </extensionElements>
+            </conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="EXCLUSIVE_GATEWAY_1441822150576" targetRef="SERVICE_TASK_1441823917513" name="sf_1441822150577" id="sf_1441822150577">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes>
+                        <ns5:Positions x="1000" y="365"/>
+                    </ns5:SequenceFlowAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="1000,365" name="curve"/>
+                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                        <ns5:StringFeature value="" name="userName"/>
+                        <ns5:IntegerFeature value="0" name="order"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <conditionExpression xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">contains(string(bpmn:getDataObject('status')), 'APROVADO')
+                <extensionElements>
+                    <ns5:OracleExtensions>
+                        <ns5:Expression mode="simple"/>
+                    </ns5:OracleExtensions>
+                </extensionElements>
+            </conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="EXCLUSIVE_GATEWAY_1441822150576" targetRef="SERVICE_TASK_1441823948636" name="sf_1441822154387" id="sf_1441822154387">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes>
+                        <ns5:Positions x="1103" y="333"/>
+                    </ns5:SequenceFlowAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="1103,333" name="curve"/>
+                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="SERVICE_TASK_1441823253290" targetRef="USER_TASK_1441821394752" name="sf_1441823253291" id="sf_1441823253291">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="SERVICE_TASK_1441823569027" targetRef="EVT14022830002381" name="sf_1441823581371" id="sf_1441823581371">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes>
+                        <ns5:Positions x="898" y="630"/>
+                    </ns5:SequenceFlowAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="898,630" name="curve"/>
+                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="EXCLUSIVE_GATEWAY_1441821920830" targetRef="SERVICE_TASK_1441823569027" name="sf_1441823722425" id="sf_1441823722425">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="SERVICE_TASK_1441823740886" targetRef="USER_TASK_1441821714113" name="sf_1441823756160" id="sf_1441823756160">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="SERVICE_TASK_1441823917513" targetRef="USER_TASK_1441821714113" name="sf_1441823921923" id="sf_1441823921923">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="SERVICE_TASK_1441823948636" targetRef="EVT14022830002381" name="sf_1441823961806" id="sf_1441823961806">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="SERVICE_TASK_1441823970828" targetRef="EVT14022830002381" name="sf_1441823991295" id="sf_1441823991295">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <dataObject name="DO_Solicitacao" id="DO_Solicitacao">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:DataObjectType initialize="true">
+                        <ns5:TypeRef namespace="http://xmlns.oracle.com/bpm/bpmobject/BusinessModule/BO_Solicitacao" element="BO_Solicitacao" isArray="false"/>
+                    </ns5:DataObjectType>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </dataObject>
+        <dataObject name="status" id="status">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:DataObjectType initialize="true">
+                        <ns5:TypeRef namespace="http://www.w3.org/2001/XMLSchema" type="string" isArray="false"/>
+                    </ns5:DataObjectType>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </dataObject>
+    </process>
+</definitions>

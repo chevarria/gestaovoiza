@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.64.93" id="DataBindings" SeparateXMLFiles="false"
+             Package="ui_comprarpedido" ClientType="Generic">
+  <pageMap>
+    <page path="/taskDetails1.jspx"
+          usageId="ui_comprarpedido_taskDetails1PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="ui_comprarpedido_taskDetails1PageDef"
+          path="ui_comprarpedido.pageDefs.taskDetails1PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="UI_ComprarPedido_HT_ComprarPedido"
+        path="ui_comprarpedido.UI_ComprarPedido_HT_ComprarPedido"/>
+  </dataControlUsages>
+</Application>

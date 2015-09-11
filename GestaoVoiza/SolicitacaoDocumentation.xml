@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="11.1.1.7.0.0.8" fileRevision="20120217"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+    <component name="Solicitacao">
+        <topicDocumentations>
+            <topicDocumentation name="Solicitacao">
+                <labels>
+                    <label locale="en">Solicitacao</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="USER_TASK_1441821336206">
+                <labels>
+                    <label locale="en">SolicitarPedido</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="USER_TASK_1441821394752">
+                <labels>
+                    <label locale="en">AprovarPedido</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="USER_TASK_1441821465562">
+                <labels>
+                    <label locale="en">AprovarValor</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="USER_TASK_1441821714113">
+                <labels>
+                    <label locale="en">ComprarPedido</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="SERVICE_TASK_1441823253290">
+                <labels>
+                    <label locale="en">CriarTask</label>
+                </labels>
+                <descriptions>
+                    <description locale="en">CriarTask</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="SERVICE_TASK_1441823569027">
+                <labels>
+                    <label locale="en">AtualizarTask</label>
+                </labels>
+                <descriptions>
+                    <description locale="en">AtualizarTask</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="SERVICE_TASK_1441823740886">
+                <labels>
+                    <label locale="en">AtualizarTask</label>
+                </labels>
+                <descriptions>
+                    <description locale="en">AtualizarTask</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="SERVICE_TASK_1441823917513">
+                <labels>
+                    <label locale="en">AtualizarTask</label>
+                </labels>
+                <descriptions>
+                    <description locale="en">AtualizarTask</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="SERVICE_TASK_1441823948636">
+                <labels>
+                    <label locale="en">AtualizarTask</label>
+                </labels>
+                <descriptions>
+                    <description locale="en">AtualizarTask</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="SERVICE_TASK_1441823970828">
+                <labels>
+                    <label locale="en">AtualizarTask</label>
+                </labels>
+                <descriptions>
+                    <description locale="en">AtualizarTask</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT14022830002384">
+                <labels>
+                    <label locale="en">Start</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EVT14022830002381">
+                <labels>
+                    <label locale="en">End</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EXCLUSIVE_GATEWAY_1441821446023">
+                <labels>
+                    <label locale="en">Valor Excedido?</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EXCLUSIVE_GATEWAY_1441821920830">
+                <labels>
+                    <label locale="en">Aprovado?</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EXCLUSIVE_GATEWAY_1441822150576">
+                <labels>
+                    <label locale="en">Aprovado?</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="sf14"/>
+            <topicDocumentation name="sf_1441821336209"/>
+            <topicDocumentation name="sf_1441821394753"/>
+            <topicDocumentation name="sf_1441821446025">
+                <labels>
+                    <label locale="en">SIM</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf_1441821698601">
+                <labels>
+                    <label locale="en">NAO</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="sf_1441821714114"/>
+            <topicDocumentation name="sf_1441821731508"/>
+            <topicDocumentation name="sf_1441821920832">
+                <labels>
+                    <label locale="en">SIM</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf_1441822150577">
+                <labels>
+                    <label locale="en">SIM</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf_1441822154387">
+                <labels>
+                    <label locale="en">NAO</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="sf_1441823253291"/>
+            <topicDocumentation name="sf_1441823581371"/>
+            <topicDocumentation name="sf_1441823722425"/>
+            <topicDocumentation name="sf_1441823756160"/>
+            <topicDocumentation name="sf_1441823921923"/>
+            <topicDocumentation name="sf_1441823961806"/>
+            <topicDocumentation name="sf_1441823991295"/>
+        </topicDocumentations>
+    </component>
+</processDocumentation>
