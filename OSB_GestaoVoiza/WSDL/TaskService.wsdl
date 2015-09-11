@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://esb.voiza.com.br/GestaoVoiza/CriarTask/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CriarTask" targetNamespace="http://esb.voiza.com.br/GestaoVoiza/CriarTask/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://esb.voiza.com.br/GestaoVoiza/CriarTask/">
+      <xsd:element name="criarTask">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="titulo" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+          	<xsd:element name="descricao" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+          	<xsd:element name="data" type="xsd:dateTime" minOccurs="1" maxOccurs="1"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="criarTaskResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="atualizarTask">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="atualizarTaskResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="criarTaskRequest">
+    <wsdl:part element="tns:criarTask" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="criarTaskResponse">
+    <wsdl:part element="tns:criarTaskResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="atualizarTaskRequest">
+  	<wsdl:part name="parameters" element="tns:atualizarTask"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="atualizarTaskResponse">
+  	<wsdl:part name="parameters" element="tns:atualizarTaskResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TaskService">
+    <wsdl:operation name="criarTask">
+      <wsdl:input message="tns:criarTaskRequest"/>
+      <wsdl:output message="tns:criarTaskResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="atualizarTask">
+    	<wsdl:input message="tns:atualizarTaskRequest"></wsdl:input>
+    	<wsdl:output message="tns:atualizarTaskResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TaskSOAP" type="tns:TaskService">
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="criarTask">
+  		<soap:operation
+  			soapAction="http://esb.voiza.com.br/GestaoVoiza/CriarTask/criarTask" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="atualizarTask">
+  		<soap:operation
+  			soapAction="http://esb.voiza.com.br/GestaoVoiza/CriarTask/atualizarTask" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CriarTask">
+    <wsdl:port binding="tns:TaskSOAP" name="TaskSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

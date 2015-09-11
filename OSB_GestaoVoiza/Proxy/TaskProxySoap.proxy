@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-fragment xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:tran="http://www.bea.com/wli/sb/transports" xmlns:env="http://www.bea.com/wli/config/env" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+  <ser:coreEntry isProxy="true" isEnabled="true">
+    <ser:binding type="SOAP" isSoap12="false" xsi:type="con3:SoapBindingType" xmlns:con3="http://www.bea.com/wli/sb/services/bindings/config">
+      <con3:wsdl ref="GestaoVoiza/WSDL/TaskService"/>
+      <con3:binding>
+        <con3:name>TaskSOAP</con3:name>
+        <con3:namespace>http://esb.voiza.com.br/GestaoVoiza/CriarTask/</con3:namespace>
+      </con3:binding>
+      <con3:selector type="SOAP action"/>
+      <con3:WSI-compliant>false</con3:WSI-compliant>
+    </ser:binding>
+    <ser:monitoring isEnabled="false">
+      <ser:aggregationInterval>10</ser:aggregationInterval>
+      <ser:pipelineMonitoringLevel>Pipeline</ser:pipelineMonitoringLevel>
+    </ser:monitoring>
+    <ser:reporting>true</ser:reporting>
+    <ser:logging isEnabled="true">
+      <ser:logLevel>debug</ser:logLevel>
+    </ser:logging>
+    <ser:sla-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:sla-alerting>
+    <ser:pipeline-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:pipeline-alerting>
+    <ser:ws-policy>
+      <ser:binding-mode>wsdl-policy-attachments</ser:binding-mode>
+    </ser:ws-policy>
+  </ser:coreEntry>
+  <ser:endpointConfig>
+    <tran:provider-id>http</tran:provider-id>
+    <tran:inbound>true</tran:inbound>
+    <tran:URI>
+      <env:value>/GestaoVoiza/Task</env:value>
+    </tran:URI>
+    <tran:inbound-properties/>
+    <tran:all-headers>false</tran:all-headers>
+    <tran:provider-specific>
+      <http:inbound-properties/>
+    </tran:provider-specific>
+  </ser:endpointConfig>
+  <ser:router errorHandler="_onErrorHandler-9107767100101925810--6f33fb96.14fb778536c.-7f83">
+    <con:pipeline type="request" name="CriarTaskPipe_request">
+      <con:stage name="Validate">
+        <con:context/>
+        <con:actions>
+          <con1:validate>
+            <con2:id>_ActionId-9107767100101925810--6f33fb96.14fb778536c.-7fbc</con2:id>
+            <con1:wsdl ref="GestaoVoiza/WSDL/TaskService"/>
+            <con1:schemaElement xmlns:cri="http://esb.voiza.com.br/GestaoVoiza/CriarTask/">cri:criarTask</con1:schemaElement>
+            <con1:varName>body</con1:varName>
+            <con1:location>
+              <con2:xpathText>./*</con2:xpathText>
+            </con1:location>
+          </con1:validate>
+        </con:actions>
+      </con:stage>
+      <con:stage name="Enrich">
+        <con:context>
+          <con2:varNsDecl namespace="http://esb.voiza.com.br/GestaoVoiza/CriarTask/" prefix="cri"/>
+        </con:context>
+        <con:actions>
+          <con1:insert varName="body">
+            <con2:id>_ActionId-9107767100101925810--6f33fb96.14fb778536c.-7ea7</con2:id>
+            <con1:location>
+              <con2:xpathText>./*</con2:xpathText>
+            </con1:location>
+            <con1:where>last-child</con1:where>
+            <con1:expr>
+              <con2:xqueryText>&lt;teste>&lt;/teste></con2:xqueryText>
+            </con1:expr>
+          </con1:insert>
+          <con1:assign varName="teste">
+            <con2:id>_ActionId-9107767100101925810--6f33fb96.14fb778536c.-7e01</con2:id>
+            <con1:expr>
+              <con2:xqueryText>"Ok"</con2:xqueryText>
+            </con1:expr>
+          </con1:assign>
+        </con:actions>
+      </con:stage>
+      <con:stage name="Transform">
+        <con:context/>
+      </con:stage>
+    </con:pipeline>
+    <con:pipeline type="response" name="CriarTaskPipe_response"/>
+    <con:pipeline type="request" name="AtualizarTaskPipe_request">
+      <con:stage name="Validate">
+        <con:context>
+          <con2:varNsDecl namespace="http://esb.voiza.com.br/GestaoVoiza/CriarTask/" prefix="cri"/>
+        </con:context>
+        <con:actions>
+          <con1:validate>
+            <con2:id>_ActionId-9107767100101925810--6f33fb96.14fb778536c.-7f84</con2:id>
+            <con1:wsdl ref="GestaoVoiza/WSDL/TaskService"/>
+            <con1:schemaElement xmlns:cri="http://esb.voiza.com.br/GestaoVoiza/CriarTask/">cri:atualizarTask</con1:schemaElement>
+            <con1:varName>body</con1:varName>
+            <con1:location>
+              <con2:xpathText>./*</con2:xpathText>
+            </con1:location>
+          </con1:validate>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:pipeline type="response" name="AtualizarTaskPipe_response"/>
+    <con:pipeline type="error" name="_onErrorHandler-9107767100101925810--6f33fb96.14fb778536c.-7f83">
+      <con:stage name="Error">
+        <con:context/>
+        <con:actions>
+          <con1:assign varName="erro">
+            <con2:id>_ActionId-9107767100101925810--6f33fb96.14fb778536c.-7f15</con2:id>
+            <con1:expr>
+              <con2:xqueryText>"Ferrou! Erro!"</con2:xqueryText>
+            </con1:expr>
+          </con1:assign>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:flow>
+      <con:branch-node type="operation" name="OperationalBranchNode">
+        <con:context/>
+        <con:branch-table>
+          <con:branch name="criarTask">
+            <con:operator>equals</con:operator>
+            <con:value/>
+            <con:flow>
+              <con:pipeline-node name="CriarTaskPipe">
+                <con:request>CriarTaskPipe_request</con:request>
+                <con:response>CriarTaskPipe_response</con:response>
+              </con:pipeline-node>
+            </con:flow>
+          </con:branch>
+          <con:branch name="atualizarTask">
+            <con:operator>equals</con:operator>
+            <con:value/>
+            <con:flow>
+              <con:pipeline-node name="AtualizarTaskPipe">
+                <con:request>AtualizarTaskPipe_request</con:request>
+                <con:response>AtualizarTaskPipe_response</con:response>
+              </con:pipeline-node>
+            </con:flow>
+          </con:branch>
+          <con:default-branch>
+            <con:flow/>
+          </con:default-branch>
+        </con:branch-table>
+      </con:branch-node>
+    </con:flow>
+  </ser:router>
+</xml-fragment>
